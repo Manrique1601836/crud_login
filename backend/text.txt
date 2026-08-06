@@ -1,0 +1,36 @@
+
+// forma de probar agregar
+fetch("http://localhost:3000/usuarios", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        nombre: "Pedro"
+    })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+
+
+
+// forma de probar el editar
+fetch("http://localhost:3000/usuarios/2", {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        nombre: "Pedro"
+    })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+
+
+// forma de porbar eliminar
+fetch("http://localhost:3000/usuarios/2", {
+    method: "DELETE"
+})
+.then(res => res.json())
+.then(data => console.log(data));
