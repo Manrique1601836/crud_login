@@ -1,0 +1,38 @@
+
+
+footer .footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+footer .footer .description{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.description .img-logotip{
+    width: 20rem;
+}
+
+footer .footer .retorno{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.retorno button{
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    border: none;
+}

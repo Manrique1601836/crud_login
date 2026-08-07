@@ -1,0 +1,38 @@
+
+.main-inicio{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 3rem;
+}
+.img-welcome{
+    width: 30rem;
+}
+
+.wel{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.wel p{
+    width: 40%;
+}
+
+@media screen and (max-width:1200px){
+    
+    .wel p{
+        width: 100%;
+        padding: .3rem;
+    }
+    .wel .img-welcome{
+        width: 100%;
+        padding: .3rem;
+    }
+}

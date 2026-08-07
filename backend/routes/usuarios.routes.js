@@ -8,7 +8,8 @@ const {
     usuarioAdd,
     usuarioId,
     usuarioUpdate,
-    usuarioDelete
+    usuarioDelete,
+    cambiarRol
 
 } = require("../controllers/usuarios.controllers");
 
@@ -26,7 +27,7 @@ router.get("/", verificarToken ,usuarioRead);
 
 
 // agregar usuario
-router.post("/", verificarToken, usuarioAdd);
+router.post("/", usuarioAdd);
 
 
 // consultar usuario especifico
@@ -39,5 +40,7 @@ router.put("/:id", verificarToken, usuarioUpdate);
 
 // eliminar usuario especifico
 router.delete("/:id", verificarToken, verificarAdmin, usuarioDelete);
+
+router.put("/:id/rol", verificarToken, verificarAdmin, cambiarRol);
 
 module.exports = router;

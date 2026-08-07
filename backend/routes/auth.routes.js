@@ -10,7 +10,6 @@ const {
     editarPerfil,
     cambiarPassword
 } = require("../controllers/auth.controllers");
-// const { route } = require("./usuarios.routes");
 
 const {
     verificarToken

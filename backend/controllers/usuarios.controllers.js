@@ -1,4 +1,4 @@
-
+const bcrypt = require("bcrypt");
 
 const {
 
@@ -6,7 +6,8 @@ const {
     usuarioAgg,
     usuarioBuscarPorId,
     usuarioEditarPorId,
-    usuarioEliminarPorId
+    usuarioEliminarPorId,
+    usuarioEditarRol
 
 } = require("../models/usuario.models")
 
@@ -22,7 +23,8 @@ const usuarioRead = (req, res) => {
         const usuariosSinPassword = usuarios.map(usuario => ({
             id: usuario.id,
             nombre: usuario.nombre,
-            email: usuario.email
+            email: usuario.email,
+            rol: usuario.rol
         }));
 
         res.json(usuariosSinPassword);
@@ -32,11 +34,15 @@ const usuarioRead = (req, res) => {
 };
 
 //  agregar nuevo usuario
-const usuarioAdd = (req,res)=>{
+const usuarioAdd = async (req,res)=>{
 
     const {nombre,email,password} = req.body;
 
-    usuarioAgg(nombre,email,password,(error,nuevoUsuario)=>{
+
+    const passwordEncriptada = await bcrypt.hash(password, 10);
+
+
+    usuarioAgg(nombre,email,passwordEncriptada,(error,nuevoUsuario)=>{
 
         if(error){
             return res.status(500).json(error);
@@ -130,12 +136,33 @@ const usuarioDelete = (req,res) => {
 
 };
 
+const cambiarRol = (req,res)=>{
 
+    const id = Number(req.params.id);
+    const { rol } = req.body;
+
+    console.log(req.body);
+    console.log(rol);
+
+    usuarioEditarRol(id, rol, (error, resultado)=>{
+
+        if(error){
+            return res.status(500).json(error);
+        }
+
+        res.json({
+            mensaje:"Rol actualizado correctamente"
+        });
+
+    });
+
+};
 
 module.exports = {
     usuarioRead,
     usuarioAdd,
     usuarioId,
     usuarioUpdate,
-    usuarioDelete
+    usuarioDelete,
+    cambiarRol
 }

@@ -31,25 +31,30 @@ const usuarioVer = (callback) => {
 const usuarioAgg = (nombre, email, password, callback) => {
 
     const sql = `
-        INSERT INTO usuarios (nombre, email, password)
-        VALUES (?, ?, ?)
+        INSERT INTO usuarios (nombre, email, password, rol)
+        VALUES (?, ?, ?, ?)
     `;
 
-    db.query(sql, [nombre, email, password], (error, resultado)=>{
+    db.query(
+        sql,
+        [nombre, email, password, "usuario"],
+        (error, resultado)=>{
 
-        if(error){
-            callback(error, null);
-            return;
+            if(error){
+                callback(error, null);
+                return;
+            }
+
+            callback(null, {
+                id: resultado.insertId,
+                nombre,
+                email,
+                password,
+                rol: "usuario"
+            });
+
         }
-
-        callback(null, {
-            id: resultado.insertId,
-            nombre,
-            email,
-            password
-        });
-
-    });
+    );
 
 };
 
@@ -84,6 +89,32 @@ const usuarioEditarPorId = (id, nombre, callback) => {
     db.query(
         sql,
         [nombre, id],
+        (error, resultado)=>{
+
+            if(error){
+                callback(error, null);
+                return;
+            }
+
+            callback(null, resultado);
+
+        }
+    );
+
+};
+
+const usuarioEditarRol = (id, rol, callback) => {
+
+    const sql = `
+        UPDATE usuarios
+        SET rol = ?
+        WHERE id = ?
+    `;
+
+
+    db.query(
+        sql,
+        [rol, id],
         (error, resultado)=>{
 
             if(error){
@@ -170,5 +201,6 @@ module.exports = {
     usuarioEditarPorId,
     usuarioEliminarPorId,
     usuarioBuscarPorEmail,
-    usuarioCambiarPassword
+    usuarioCambiarPassword,
+    usuarioEditarRol
 }

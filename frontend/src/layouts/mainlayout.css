@@ -1,0 +1,28 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 9rem;
+}
+
+main{
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 1rem;
+}
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: brown;
+}

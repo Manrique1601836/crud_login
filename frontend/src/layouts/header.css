@@ -1,0 +1,95 @@
+
+/* contedor  */
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
+
+/* superior */
+.header .top-header{
+    padding: 1rem;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.lupa .mode button{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* padding: .3rem; */
+    width: 2rem;
+    height: 2rem;
+
+}
+.lupa .buscador{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.lupa .buscador input{
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    padding: .5rem;
+}
+
+.top-header .img-logotip-header{
+    width: 20rem;
+}
+
+/* inferior */
+.header .botton-header{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    background-color: blue;
+}
+.header .botton-header ul{
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+.header .botton-header ul li{
+    padding: 0 1rem;
+    width: auto;
+    height: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.header .botton-header ul li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .botton-header ul li {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.header .botton-header ul li:hover{
+    transform: scale(1.1);
+    background-color: rgb(91, 91, 228);
+}
