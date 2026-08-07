@@ -1,4 +1,6 @@
 
+import "./style/login.css"
+
 import { useState } from "react"
 import { Link , useNavigate } from "react-router-dom"
 
@@ -58,10 +60,10 @@ export default function Login(){
             
 
             <Link to="/registro">
-                <button>Registrarse</button>
+                <button className="btnRegistrar">Registrarse</button>
             </Link>
 
-            <form action="" onSubmit={ingresar}>
+            <form action="" onSubmit={ingresar} className="form">
 
                 <h1>Login</h1>
 

@@ -35,7 +35,7 @@ router.get("/:id", verificarToken, usuarioId);
 
 
 // editar usuario especifico
-router.put("/:id", verificarToken, usuarioUpdate);
+router.put("/:id", verificarToken, usuarioUpdate);  
 
 
 // eliminar usuario especifico

@@ -1,0 +1,47 @@
+
+.btnLogin{
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    background-color: darkblue;
+    color: whitesmoke;
+    margin: 2rem 0 0 2rem;
+    border: none;
+    box-shadow: 0 0 10px 0;
+}
+.registro{
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(37, 37, 37);
+}
+.form-login{
+    background-color: rgb(56, 55, 55);
+    color: whitesmoke;
+    margin: auto;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding:  5rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px 0;
+}
+.form-login input{
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0 .5rem;
+}
+
+.form-login button{
+    margin-top: 4rem;
+    height: 2rem;
+    background-color: darkblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}

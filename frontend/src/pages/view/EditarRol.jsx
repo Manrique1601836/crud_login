@@ -1,9 +1,17 @@
+
+import { X } from 'lucide-react';
+
 import { useState } from "react";
 
 export default function EditarRol({usuario, cerrar}){
 
     const [rol, setRol] = useState(usuario.rol);
 
+    const cerrarAhora = () => {
+
+        cerrar()
+
+    }
 
     const guardarCambios = (e) => {
 
@@ -37,39 +45,45 @@ export default function EditarRol({usuario, cerrar}){
 
 
     return(
-        <form onSubmit={guardarCambios}>
+        <div className="overlay-rol">
+            <form onSubmit={guardarCambios} className="form-rol" >
 
-            <h2>
-                Editar rol de {usuario.nombre}
-            </h2>
-
-
-            <p>
-                Rol actual: {usuario.rol}
-            </p>
+                <h2>
+                    <strong>Usuario: </strong> <p>{usuario.nombre}</p>
+                </h2>
 
 
-            <select
-                value={rol}
-                onChange={(e) => setRol(e.target.value)}
-            >
-
-                <option value="usuario">
-                    Usuario
-                </option>
-
-                <option value="admin">
-                    Admin
-                </option>
-
-            </select>
+                <p>
+                    Rol actual: {usuario.rol}
+                </p>
 
 
-            <button type="submit">
-                Guardar
-            </button>
+                <select
+                    value={rol}
+                    onChange={(e) => setRol(e.target.value)}
+                >
+
+                    <option value="usuario">
+                        Usuario
+                    </option>
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
 
 
-        </form>
+                <button type="submit" className='btnGuardarAhora'>
+                    Guardar
+                </button>
+
+                <button type="button" onClick={cerrarAhora} className='btnCerrarAhora'>
+                    <X/>
+                </button>
+
+
+            </form>
+        </div>
     )
 }

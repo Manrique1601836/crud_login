@@ -1,5 +1,112 @@
 
 .main-usuarios{
     width: 100%;
-    height: 50dvh;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* .main-usuarios h1{
+    margin: 2rem;
+} */
+
+.main-usuarios table{
+    text-align: center;
+    width: 50rem;
+    margin-left: 5rem;
+}
+.main-usuarios table thead tr th{
+    padding: 1rem;
+}
+.main-usuarios table thead {
+    background-color: rgb(56, 55, 55);
+    color: whitesmoke;
+}
+
+.main-usuarios table tbody tr td{
+    padding: .2rem;
+}
+.main-usuarios table tbody tr .btnAction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-usuarios table tbody tr .btnAction button{
+    border: none;
+    padding: .2rem .3rem;
+    border-radius: 10px;
+}
+
+.main-usuarios table tbody tr .usuarios-nombre{
+    text-transform: capitalize;
+}
+
+.overlay-rol {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.form-rol {
+    background-color: white;
+    padding: 5rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+    position: relative;
+    width: 18rem;
+}
+.form-rol .btnCerrarAhora{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-rol .btnGuardarAhora{
+    background-color: darkblue;
+    padding: .5rem 1rem;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+
+.form-rol select{
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-rol .form-rol h2{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.overlay-rol .form-rol h2 p{
+    text-transform: capitalize;
 }

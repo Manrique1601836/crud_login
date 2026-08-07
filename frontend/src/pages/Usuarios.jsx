@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import "./style/usuarios.css"
 import EditarRol from "./view/editarRol";
 
+
+import { Trash2  } from 'lucide-react';
+import { Pen } from 'lucide-react';
+
 export default function Usuarios(){
 
     const [usuarios, setUsuarios] = useState([]);
@@ -41,7 +45,7 @@ export default function Usuarios(){
 
     if(usuarioLogueado.rol !== "admin"){
         return (
-            <h1>
+            <h1 className="sin-persimo">
                 No tienes permisos para ver esta sección
             </h1>
         )
@@ -99,7 +103,7 @@ export default function Usuarios(){
                 )
             }
 
-            <table>
+            <table border=".5">
                 <thead>
                     <tr>
                         <th>Usuario</th>
@@ -115,7 +119,7 @@ export default function Usuarios(){
 
                             <tr key={usuario.id}>
 
-                                <td>
+                                <td className="usuarios-nombre">
                                     {usuario.nombre}
                                 </td>
 
@@ -127,13 +131,17 @@ export default function Usuarios(){
                                     {usuario.rol}
                                 </td>
 
-                                <td>
-                                    <button onClick={() => setUsuarioEditar(usuario)}>
-                                        Editar
+                                <td className="btnAction">
+                                    <button onClick={() => setUsuarioEditar(usuario)} style={{
+                                        backgroundColor: "darkorange"
+                                    }}>
+                                        <Pen/>
                                     </button>
 
-                                    <button onClick={() => usuarioEliminado(usuario.id)}>
-                                        Eliminar
+                                    <button onClick={() => usuarioEliminado(usuario.id)}style={{
+                                        backgroundColor: "darkred"
+                                    }}>
+                                        <Trash2 />
                                     </button>
                                 </td>
 

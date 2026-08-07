@@ -2,11 +2,14 @@
 import Welcome from "../assets/welcome.jpg"
 
 export default function Inicio(){
+
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
     return(
         <>
 
             <div className="main-inicio">
-                <h1> Bienvenido Admin</h1>
+                <h1> Bienvenido {usuario.rol}</h1>
 
                 <div className="wel">
                     <p><strong>Me Registro </strong> es una aplicación web desarrollada para facilitar el 

@@ -1,4 +1,7 @@
 
+import "./style/registro.css"
+
+
 import { useState } from "react"
 import { Link , useNavigate } from "react-router-dom"
 
@@ -45,35 +48,41 @@ export default function Registro(){
 
     return(
         <>
-            <Link to="/">
-                <button>Registrar</button>
-            </Link>
+            <div className="registro">
+                <Link to="/">
+                    <button className="btnLogin">Login</button>
+                </Link>
 
-            <h1>
-                Regitro
-            </h1>
 
-            <form action="" onSubmit={registrarUsuario}>
+                <form action="" onSubmit={registrarUsuario} className="form-login">
 
-                <input 
-                    type="text" 
-                    value={nombre}
-                    onChange={(e) => setNombre(e.target.value)}
-                />
+                    <h1>
+                        Regitro
+                    </h1>
 
-                <input 
-                    type="email" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                
-                <input 
-                    type="password" 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Crear</button>
-            </form>
+                    <input 
+                        type="text" 
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                        placeholder=" Ingresatu nombre "
+                    />
+
+                    <input 
+                        type="email" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder=" Ingresa tu email "
+                    />
+                    
+                    <input 
+                        type="password" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder=" Crea una contraseña "
+                    />
+                    <button type="submit">Crear</button>
+                </form>
+            </div>
         </>
     )
 }

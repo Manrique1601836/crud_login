@@ -6,6 +6,7 @@ footer .footer{
     flex-direction: row;
     padding: 1rem;
     flex-wrap: wrap;
+    color: whitesmoke;
 }
 
 footer .footer .description{
@@ -35,4 +36,6 @@ footer .footer .retorno{
     padding: .5rem 1rem;
     border-radius: 10px;
     border: none;
+    background-color: darkblue;
+    color: whitesmoke;
 }

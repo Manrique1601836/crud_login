@@ -12,9 +12,15 @@ export default function Header(){
 
     const cerrarSesion = () => {
 
+        const confirmar = window.confirm("¿Deseas salir de la web?");
+
+        if (!confirmar) {
+            return;
+        }
+
         localStorage.removeItem("token");
         localStorage.removeItem("usuario");
-        console.log("removidos")
+        console.log("sesion cerrada")
 
         navigate("/");
 
@@ -25,7 +31,7 @@ export default function Header(){
         <div className="header">
             <div className="top-header">
                 {/* <img src={Logo} alt="logo-empresa" className="img-logotip-header"/> */}
-                <h1>me registro</h1>
+                <h1>Me Registro</h1>
                 <Lupa/>
             </div>
             <div className="botton-header">

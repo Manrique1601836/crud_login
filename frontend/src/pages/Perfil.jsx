@@ -15,15 +15,15 @@ export default function Perfil(){
             <h1>Perfil</h1>
 
             <p>
-                Nombre: {usuario.nombre}
+                <strong>nombre:</strong> <p>{usuario.nombre}</p>
             </p>
 
             <p>
-                Email: {usuario.email}
+                <strong>email:</strong> {usuario.email}
             </p>
 
             <p>
-                Rol: {usuario.rol}
+                <strong>rol:</strong> {usuario.rol}
             </p>
 
         </div>
